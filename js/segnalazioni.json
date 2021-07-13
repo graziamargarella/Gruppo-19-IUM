@@ -26,7 +26,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione2.jpg"
+        "image": ["fotoSegnalazione2.1.jpg" , "fotoSegnalazione2.2.jpg"]
         }, 
         {
         "numero": 3,
@@ -40,7 +40,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione3.jpg"
+        "image": ["fotoSegnalazione3.1.jpg" , "fotoSegnalazione3.2.jpg"]
         }, 
         {
         "numero": 4,
@@ -54,7 +54,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione4.jpg"
+        "image": ["fotoSegnalazione4.1.jpg" , "fotoSegnalazione4.2.jpg"]
         }, 
 
         {
@@ -69,37 +69,37 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione5.png"
+        "image": ["fotoSegnalazione5.1.jpg" , "fotoSegnalazione5.2.jpg"]
         }, 
 
         {
         "numero": 6,
-        "titolo": "Ho trovato molte bottiglie",
-        "descrizione": "Ne ho raccolta qualcuna ma sono comunque rimaste molte bottiglie in questa zona.",
+        "titolo": "Vari rifiuti sulla spiaggia, molti gabbiani",
+        "descrizione": "C'erano tantissimi gabbiani attirati dall'immondizia che ci hanno importunato tutto il tempo.",
         "invio": "22/06/2021",
         "luogo": "Accesso Spiaggia Libera",
         "coordinate": [40.337089, 14.970245],
-        "tipologia": "Plastica",
-        "inviatoDa": "Maria",
+        "tipologia": ["Plastica", "Altro"],
+        "inviatoDa": "Franca",
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione6.1.jpg" , "fotoSegnalazione6.2.jpg"]
         }, 
 
         {
         "numero": 7,
-        "titolo": "Ho trovato molte bottiglie",
-        "descrizione": "Ne ho raccolta qualcuna ma sono comunque rimaste molte bottiglie in questa zona.",
+        "titolo": "Abbiamo raccolto gran parte dei rifiuti della spiaggia",
+        "descrizione": "Abbiamo raccolto la maggior parte dei rifiuti, c'è bisogno di smaltirli.",
         "invio": "22/06/2021",
         "luogo": "Accesso Spiaggia Libera",
         "coordinate": [40.299527, 14.947286],
-        "tipologia": "Plastica",
-        "inviatoDa": "Maria",
+        "tipologia": ["Plastica"],
+        "inviatoDa": "Josè",
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione7.1.jpg" , "fotoSegnalazione7.2.jpg"]
         }, 
         {
         "numero": 8,
@@ -113,7 +113,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }, 
         {
         "numero": 9,
@@ -127,7 +127,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }, 
         {
         "numero": 10,
@@ -141,7 +141,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }, 
         {
         "numero": 11,
@@ -155,7 +155,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }, 
         {
         "numero": 12,
@@ -169,7 +169,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }, 
         {
         "numero": 13,
@@ -183,7 +183,7 @@
         "risolto": false,
         "risoltoDa": null,
         "risoltoData": null,
-        "image": "fotoSegnalazione1.png"
+        "image": ["fotoSegnalazione1.1.jpg" , "fotoSegnalazione1.2.jpg"]
         }
     ]
 }

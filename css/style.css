@@ -99,15 +99,19 @@ h1, h2, h3, h4,h5{
 /*Sezione Notizie HomePage*/
 #immagineCard
 {
-    width: 250px; height:228px;
+    width: 250px; 
+    height:228px;
 }
 
 #testoCard
 {
     text-align: left;
-    margin-top: -10%;
 }
 
+/*Homepage Admin*/
+#testoCardAdmin{
+    margin-top:-10%;
+}
 #bottoneScopri
 {
     position: relative;
