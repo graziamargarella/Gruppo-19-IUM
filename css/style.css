@@ -28,3 +28,68 @@ a{
 #content{
     margin-top: 2em;
 }
+
+h1, h2, h3, h4,h5{
+    font-weight: bold;
+}
+
+.bottone{
+    width: 290px;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 150px;
+    background-image: linear-gradient(to right, #0195CD , #ECA293);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius:50px;
+}
+
+
+.paragrafoCTA{
+    text-align: center;
+}
+
+.bottoneCTA{
+    margin-left:140px;
+}
+
+
+/*Invia segnalazione*/
+#titolo{
+    text-align:center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#riquadro-esterno{
+    border: 1px solid #ACACAC;
+    margin-bottom: 40px;
+}
+
+#label-esterna{
+    border: 1px solid #ACACAC;
+    position: relative;
+    top: -20px;
+    background-color: white;
+    display: inline-block;
+    padding: 0 15px 0 15px;
+}
+
+#form-segnalazione{
+    text-align: center;
+}
+
+#inputDescrizioneLabel{
+    padding-right: 75.5%;
+}
+
+#bottoneInvia{
+    margin-left: 200px;
+}
+
+/*Visualizza segnalazioni*/
+.scrollable {
+    height: 500px; 
+    overflow-y: scroll;
+}
