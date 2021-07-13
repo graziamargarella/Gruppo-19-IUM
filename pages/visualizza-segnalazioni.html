@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+        <title>Una Mano al Mare - Visualizza segnalazioni</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="liquid-container">
+            <img src="../img/header.png" width="100%"/>
+            <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
+            <a href="#"><img id="header-icon" src="../icone/user.png" width="60px"/></a>
+            <nav class="nav">
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link active" href="#">I tuoi punti</a>
+                <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
+            </nav>
+        </div>
+
+        <div id="content" class="container">
+            <div class="row mb-5">
+                <div class="card-container col-sm-5 scrollable">
+                  <div class="card mb-3">
+                    <img src="../img/foto_segnalazioni/foto-segnalazione1.1.png" height="30%" width="30%">
+                    <div class="card-body">
+                      <h5 class="card-title">Ho trovato molte bottiglie</h5>
+                      <p class="card-text">Ne ho raccolta qualcuna ma sono comunque rimaste molte bottiglie in questa zona.</p>
+                      <p class="card-text"><small class="text-muted">22/06/2021</small></p>
+                      <p class="card-text"><small class="text-muted">Accesso Spiaggia Libera</small></p>
+                      <button id="bottoneDettagli" class="bottone"><h5>Dettagli</h5></button>
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                  <img src="foto-segnalazione2.png" height="5%" width="5%">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+
+                <div class="card mb-3">
+                  <img src="foto-segnalazione3.png" height="5%" width="5%">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              </div>
+              <div class="col-lg-7">
+                <div id="map" style="height: 500px;" class="rounded"></div>
+              </div>
+            </div>
+          </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>     
+        <script src="../js/main.js"></script>
+    </body>
+</html>
