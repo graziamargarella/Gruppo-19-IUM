@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <title>Una Mano al Mare - Invia una segnalazione</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="liquid-container">
+            <img src="../img/header.png" width="100%"/>
+            <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
+            <a href="#"><img id="header-icon" src="../icone/user.png" width="60px"/></a>
+            <nav class="nav">
+                <a class="nav-link" href="">Home</a>
+                <a class="nav-link active" href="#">I tuoi punti</a>
+                <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
+            </nav>
+        </div>
+
+        
+        <h2 id="titolo">Invia una segnalazione</h2>
+
+        <!--Form-->
+        <div id="riquadro-esterno" class="container">
+          <div id="label-esterna">
+            <h4>Compila i seguenti campi</h4>
+          </div>
+          <div id="form-segnalazione">
+              <form>
+                <!--Input Foto-->
+                <div class="row mb-4">
+                  <label for="inputFoto" class="col col-form-label"><h4>Aggiungi una foto</h4></label>
+                  <div class="col-sm-7">
+                    <button type="button" style="border:0; background:transparent"><img src="../icone/piu.png" alt="bottone aggiungi foto"></button>
+                </div>
+                <!--Descrizione-->
+                  <div class="col-12 ml-5">
+                    <label for="inputDescrizione" id="inputDescrizioneLabel"><h4>Descrizione</h4></label>
+                    <textarea class="form-control" placeholder="Aggiungi una descrizione del problema" id="inputDescrizione" style="height: 100px; width: 70%; margin-left: 4em;"></textarea>
+                  </div>
+                <!--Input Localizzazione-->
+                <div class="row mb-4 mt-1">
+                  <label for="inputLocalizzazione" class="col col-form-label" style="margin-left: 4em;"><h4>Invia la localizzazione</h4></label>
+                  <div class="col-sm-7">
+                    <button type="button" style="border:0; background:transparent"><img src="../icone/piu.png" alt="bottone aggiungi localizzazione"></button>
+                </div>
+                <div class="row mb-4 ">
+                <!--Invia Segnalazione-->
+                <button type="submit" id="bottoneInvia" class="bottone"><h5>Invia</h5></button>
+                <!--Annulla -->
+                <button type="reset" id="bottoneAnnulla" class="bottone"><h5>Annulla</h5></button>
+                </div>
+              </form>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
