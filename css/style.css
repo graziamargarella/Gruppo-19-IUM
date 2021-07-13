@@ -105,6 +105,7 @@ h1, h2, h3, h4,h5{
 #testoCard
 {
     text-align: left;
+    margin-top: -10%;
 }
 
 #bottoneScopri
@@ -112,4 +113,33 @@ h1, h2, h3, h4,h5{
     position: relative;
     margin-top: 10%;
     margin-right: 17%;
+}
+
+
+#bottoneEliminaNotizia
+{
+    max-width: 50px;
+    max-height: 50px;
+    max-block-size: 50px;
+    position: relative;
+    margin-bottom: 10%;
+    margin-left: 80%;
+
+    width: 40px; height:40px;
+}
+
+#bottoneModificaNotizia
+{
+    position: relative;
+    margin-top: 10%;
+    margin-right: 17%;
+    width: 250px; height:45px;
+}
+
+#bottoneAggiungiNotizia
+{
+    position: relative;
+    margin-bottom: 10%;
+    margin-left: 50%;
+    width: 250px; height:45px;
 }
