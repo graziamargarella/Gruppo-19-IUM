@@ -149,3 +149,33 @@ h1, h2, h3, h4,h5{
 {
     margin-top: 0;
 }
+
+/* Pagina Scopri di più */
+
+#TitoloNotiziaSD
+{
+    padding-top: 5%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+#ImmagineNotiziaSD
+{   
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+}
+
+#TestoNotiziaSD
+{
+    text-align: left;
+    margin-top: 3%;
+    
+}
+
+
+#TornaAllaHomeSD
+{
+    margin-left: 60%;
+    padding-bottom:5%;
+}
