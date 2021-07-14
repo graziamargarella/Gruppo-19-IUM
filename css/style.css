@@ -103,7 +103,17 @@ h1, h2, h3, h4,h5{
 }
 
 #icona-map{
-    padding-right: 5px;
+    padding-right: 2em;
+}
+
+.btnAnnullaRisolvi{
+    margin-top: 1em;
+    margin-left: 5em; 
+    margin-bottom: 2em;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    padding: 9px;
 }
 
 /*Sezione Notizie HomePage*/

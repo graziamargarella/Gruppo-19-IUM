@@ -27,13 +27,13 @@ class Segnalazione {
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.invio = invio;
-        this.luogo = ""+luogo;
+        this.luogo = luogo;
         this.coordinate = coordinate;
         this.tipologia = tipologia;
         this.inviatoDa = inviatoDa;
         this.risolto = false;
         this.risoltoDa = null;
-        this.risoltoData = null;
+        this.risoltoData = "";
         this.image = image;
     }
 
@@ -42,6 +42,12 @@ class Segnalazione {
         this.risoltoDa = risoltoDa;
         var oggi = new Date();
         this.risoltoData = oggi.getDate() + "/" + (oggi.getMonth()+1) + "/" + oggi.getFullYear();
+    }
+    
+    annullaRisolviSegnalazione(){
+        this.risolto = false;
+        this.risoltoDa = null;
+        this.risoltoData = "";
     }
 }
 
@@ -70,30 +76,35 @@ arrayCoords.forEach(
 
 $(document).ready(function(){
     $.each(segnalazioni, function (i) {
-        var templateString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1"><div class="col"><img class="mt-2" src="../img/foto_segnalazioni/'+segnalazioni[i].image[0]+'"></div><div class="col"><h5>'+segnalazioni[i].titolo+'</h5><p style="font-size:13px">'+ segnalazioni[i].descrizione +'</p><div class="row"><p class="card-text col-6"><img src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[i].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[i].luogo+'</small></p></div></div></div><button class="bottone btnDettagli"  onclick="dettagli('+ segnalazioni[i].numero+')"><h5>Dettagli</h5></button></div>';
+        var templateString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1"><div class="col"><img class="mt-2" src="../img/foto_segnalazioni/'+segnalazioni[i].image[0]+'"></div><div class="col"><h5>'+segnalazioni[i].titolo+'</h5><p style="font-size:12px">'+ segnalazioni[i].descrizione +'</p><div class="row"><p class="card-text col-6"><img src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[i].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[i].luogo+'</small></p></div></div></div><button class="bottone btnDettagli"  onclick="dettagli('+ segnalazioni[i].numero+')"><h5>Dettagli</h5></button></div>';
         $('#card-container').append(templateString);
     })
 });
 
 function dettagli(x){
-    console.log(segnalazioni[x-1]);
+    x = x-1;
+    var detailsString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1 mb-3"><div class="col"><img class="mt-2" src="../img/foto_segnalazioni/'+segnalazioni[x].image[1]+'"></div><div class="col"><h5>'+segnalazioni[x].titolo+'</h5><p style="font-size:12px">'+ segnalazioni[x].descrizione +'</p><p style="font-size:13px"><b>Tipologia:  </b>'+ segnalazioni[x].tipologia +'</p><p style="font-size:13px"><b>Inviato da: </b>'+ segnalazioni[x].inviatoDa +'</p><div class="row"><p class="card-text col-6"><img src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[x].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[x].luogo +'</small></p></div></div></div><button class="bottone btnDettagli"  onclick="risolvi('+ segnalazioni[x].numero+')"><h5>Risolvi</h5></button></div><a href="./visualizza-segnalazioni.html"><button class="bottone btnDettagli"><h5>Indietro</h5></button></a>';
+    $('#card-container').empty()
+    $('#card-container').removeClass('scrollable');
+    $('#card-container').append(detailsString);
 }
 
-var clickedMarker;
-
-function clickFeature(e) {
-    if(clickedMarker) {
-          clickedMarker.setIcon(redIcon);
-    }
-    var layer = e.target;
-    e.target.setIcon(blackIcon);
-    clickedMarker = e.target;
-
-    info.update(layer.feature.properties);
+function risolvi(x){
+    x = x-1;
+    risoltoDa = "Marco"; //inserire nome da login
+    segnalazioni[x].risolviSegnalazione(risoltoDa);
+    console.log(segnalazioni[x]);
+    var detailsString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1 mb-3"><div class="col"><img class="mt-2" src="../img/foto_segnalazioni/'+segnalazioni[x].image[1]+'"></div><div class="col"><h5>'+segnalazioni[x].titolo+'</h5><p style="font-size:12px">'+ segnalazioni[x].descrizione +'</p><p style="font-size:13px"><b>Tipologia:  </b>'+ segnalazioni[x].tipologia +'</p><p style="font-size:13px"><b>Inviato da: </b>'+ segnalazioni[x].inviatoDa +'</p><div class="row"><p class="card-text col-6"><img src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[x].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[x].luogo +'</small></p></div><p style="font-size:13px"><b>Risolto da:  </b>'+ segnalazioni[x].risoltoDa +'</p><p style="font-size:13px"><b>Risolto il:  </b>'+ segnalazioni[x].risoltoData +'</p></div></div></div><button class="bottone btnAnnullaRisolvi"  onclick="annullaRisolvi('+ segnalazioni[x].numero+')"><h5>Annulla Risolvi</h5></button><a href="./visualizza-segnalazioni.html"><button class="bottone btnDettagli"><h5>Indietro</h5></button></a>';
+    $('#card-container').empty()
+    $('#card-container').append(detailsString);
+    alert("Grazie per aver risolto questa segnalazione, dopo una veloce verifica ti accrediteremo 50 punti!")
 }
 
-mymap.on('click', clickFeature);
-
+function annullaRisolvi(x){
+    segnalazioni[x].annullaRisolviSegnalazione();
+    dettagli(x);
+    alert("Ci dispiace tu non abbia risolto questa segnalazione, ti aspettiamo qui.");
+}
 
 /*
 // evento onClick con coordinate
