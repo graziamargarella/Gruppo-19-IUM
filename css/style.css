@@ -126,6 +126,7 @@ h1, h2, h3, h4,h5{
 #testoCard
 {
     text-align: left;
+    
 }
 
 /*Homepage Admin*/
@@ -157,8 +158,11 @@ h1, h2, h3, h4,h5{
 
 #bottoneAggiungiNotizia
 {
-    margin-top: 0;
+
+    margin-top: -10%;
+    margin-left: 69%;
 }
+
 
 /* Pagina Scopri di più */
 
@@ -189,3 +193,5 @@ h1, h2, h3, h4,h5{
     margin-left: 60%;
     padding-bottom:5%;
 }
+
+
