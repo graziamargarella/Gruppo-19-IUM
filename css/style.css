@@ -64,7 +64,6 @@ h1, h2, h3, h4,h5{
 
 #riquadro-esterno{
     border: 1px solid #ACACAC;
-    margin-bottom: 40px;
 }
 
 #label-esterna{
@@ -77,15 +76,38 @@ h1, h2, h3, h4,h5{
 }
 
 #form-segnalazione{
-    text-align: center;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.inputfile>input {
+	display: none;
+	cursor: pointer;
+}
+
+#display-image{
+	margin-bottom: 20px;
 }
 
 #inputDescrizioneLabel{
-    padding-right: 75.5%;
+    padding-right: 50%;
+    margin-bottom: 20px;
 }
 
-#bottoneInvia{
-    margin-left: 200px;
+#inputDescrizione{
+	width: 70%;
+	padding: 40px;
+}
+
+#inputLocalizzazione{
+	margin-top: 40px;
+}
+
+#buttonMaps{
+	margin-top: 40px;
+	cursor: pointer;
+	margin-left: 10px;
+	
 }
 
 /*Visualizza segnalazioni*/
