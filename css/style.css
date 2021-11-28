@@ -36,7 +36,7 @@ h1, h2, h3, h4,h5{
 .bottone{
     width: 290px;
     height: 50px;
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 150px;
     background-image: linear-gradient(to right, #0195CD , #ECA293);
     color: white;
@@ -216,4 +216,13 @@ h1, h2, h3, h4,h5{
     padding-bottom:5%;
 }
 
+	/* Segnalazione success.html */
+#Success
+{
+	text-align:center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    font-family: 'Annie Use Your Telescope';
+    font-size: 26px;
+}
 
