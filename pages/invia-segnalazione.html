@@ -36,6 +36,7 @@
 					});
 	}
     	 </script>
+    	 	 
     <body>
         <!-- Header -->
         <div class="liquid-container">
@@ -58,7 +59,7 @@
             <h4>Compila i seguenti campi</h4>
           </div>
           <div id="form-segnalazione">
-              <form>
+              <form name="form1">
                 <!--Input Foto-->
                 <div class="row">
                   <label for="inputFoto" class="col"><h4>Aggiungi una foto</h4></label>
@@ -93,7 +94,7 @@
                 <!--Invia Segnalazione-->
                 <div class="row">
                 <div class="col">
-                <a href="../pages/segnalazioneSuccess.html"><button  type="button" id="bottoneInvia" class="bottone"><h5>Invia</h5></button></a>
+                <a href="../pages/segnalazioneSuccess.html" id="bottoneInvia"><button  type="button" class="bottone" onClick="testResults(this.document)"><h5>Invia</h5></button></a>
                 </div>
                 <!--Annulla -->
                 <div class="col">
@@ -122,7 +123,17 @@
 				var newimg=imagename.replace(/^.*\\/,"");
 				$('#display-image').html(newimg);
 			}		
-		</script>
-		
+			 
+    	 function testResults (document) 
+    	 {
+              var nameImage = $('#display-image').text();
+              var n = nameImage.length;
+              if(nameImage.length == "0")
+            	  {
+            	  $('#bottoneInvia').attr("href", "../pages/segnalazioneErrore.html");
+            	  }
+    	 }
+    	 
+    	 </script>
     </body>
 </html>
