@@ -52,6 +52,7 @@ h1, h2, h3, h4,h5{
 
 .bottoneCTA{
     margin-left:140px;
+    margin-top:40px;
 }
 
 
@@ -125,12 +126,12 @@ h1, h2, h3, h4,h5{
 }
 
 #icona-map{
-    padding-right: 2em;
+    padding-right: 10px;
 }
 
 .btnAnnullaRisolvi{
     margin-top: 1em;
-    margin-left: 5em; 
+    margin-left: 100px;
     margin-bottom: 2em;
     cursor: pointer;
     width: 250px;
