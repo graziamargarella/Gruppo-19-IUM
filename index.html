@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
         <title>Una Mano al Mare - HomePage</title>
         <link rel="stylesheet" href="./css/style.css"/>
     </head>
@@ -12,7 +13,11 @@
         <div class="liquid-container">
             <img src="./img/header.png" width="100%"/>
             <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
-            <a href="#"><img id="header-icon" src="./icone/user.png" width="60px"/></a>
+            <img id="header-icon" src="./icone/user.png" width="60px"/>
+            <div id="loadTippy()" style="display: none;">
+               <a href="http://www.google.it" style="padding: 30px">Registrazione</a>
+               <br><br>
+               <a href="http://wwww.facebook.it" style="padding: 30px;">Login</a></div>
             <nav class="nav">
                 <a class="nav-link" href="">Home</a>
                 <a class="nav-link active" href="./pages/I-Miei-Punti.html">I tuoi punti</a>
@@ -85,9 +90,12 @@
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
         <script src="./js/main.js"></script>
     </body>
 </html>
