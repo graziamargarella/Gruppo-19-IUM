@@ -1,139 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-        <title>Una Mano al Mare - Invia una segnalazione</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-    </head>
-    <script type="text/javascript">
-    function loadMaps()
-	{
-    	 $("#dialog").dialog(
-    			 	{
-			 			modal: true,
-						title: "Google Map",
-						width: 600,
-						hright: 450,
-						buttons: 
-						{
-   							Close: function () 
-   							{
-       							$(this).dialog('close');
-   							}
-		 				},
-						open: function () 
-						{
-  		 					var mapOptions =
-  		 					{
-       							center: new google.maps.LatLng(19.0606917, 72.83624970000005),
-       							zoom: 18,
-       							mapTypeId: google.maps.MapTypeId.ROADMAP
-   							}
-   							var map = new google.maps.Map($("#dvMap")[0], mapOptions);
-	 					}
-					});
-	}
-    	 </script>
-    	 	 
-    <body>
-        <!-- Header -->
-        <div class="liquid-container">
-            <img src="../img/header.png" width="100%"/>
-            <a href="../index.html"><h1 id="header-text">Una Mano al Mare</h1></a>
-            <a href="#"><img id="header-icon" src="../icone/user.png" width="60px"/></a>
-            <nav class="nav">
-              <a class="nav-link" href="../index.html">Home</a>
-              <a class="nav-link active" href="./I-Miei-Punti.html">I tuoi punti</a>
-                <a class="nav-link active" href="./chi-siamo.html">Chi siamo</a>
-            </nav>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <title>Una Mano al Mare - Invia una segnalazione</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="liquid-container">
+      <img src="../img/header.png" width="100%"/>
+      <a href="../index.html"><h1 id="header-text">Una Mano al Mare</h1></a>
+      <a href="#"><img id="header-icon" src="../icone/user.png" width="60px"/></a>
+      <nav class="nav">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link active" href="./I-Miei-Punti.html">I tuoi punti</a>
+        <a class="nav-link active" href="./chi-siamo.html">Chi siamo</a>
+      </nav>
+    </div>
+
+    <h3 id="titolo" class="mt-5">Invia una segnalazione</h2>
+    <!--Form-->
+    <div id="riquadro-esterno" class="container">
+      <div id="label-esterna">
+        <h5>Compila i seguenti campi</h5>
+      </div>
+      <div id="form-segnalazione">
+        <form name="form1">
+        <!--Input Foto-->
+        <div class="row">
+          <label for="inputFoto" class="col"><h5>Aggiungi una foto</h5></label>
+          <div class="col-6">
+            <div class="inputfile" style="margin-left: 200px;">
+              <label for="inputfile">
+              <img src="../icone/piu.png" alt="bottone aggiungi foto" width="50px">             
+              </label>
+              <input type="file" id="inputfile" class="form-control" accept="image/png, image/jpg" onchange="getImage(this.value);">
+            </div>
+          </div>
+          <div class ="col">
+            <div id="display-image"></div> 
+          </div>    
         </div>
 
-     
-        <h2 id="titolo">Invia una segnalazione</h2>
-
-        <!--Form-->
-        <div id="riquadro-esterno" class="container">
-          <div id="label-esterna">
-            <h4>Compila i seguenti campi</h4>
-          </div>
-          <div id="form-segnalazione">
-              <form name="form1">
-                <!--Input Foto-->
-                <div class="row">
-                  <label for="inputFoto" class="col"><h4>Aggiungi una foto</h4></label>
-                  <div class="col-6">
-                    <div class="inputfile">
-                      <label for="inputfile">
-                      <img src="../icone/piu.png" alt="bottone aggiungi foto">
-                      </label>
-                    <input type="file" id="inputfile" class="form-control" accept="image/png, image/jpg";" onchange="getImage(this.value);">
-                    <div class ="col-2">       
-                    <div id="display-image"></div> 
-                    </div>    
-                </div>
-                  </div>
-
-                <!--Descrizione-->
-                  <div class="col-12 ml-5">
-                    <label for="inputDescrizione" id="inputDescrizioneLabel"><h4>Descrizione</h4></label>
-                    <textarea class="form-control" placeholder="Aggiungi una descrizione del problema" id="inputDescrizione" ></textarea>
-                  </div>
-                  
-                <!--Input Localizzazione-->
-                <div class="row">
-                  <label for="inputLocalizzazione" class="col" id="inputLocalizzazione"><h4>Invia la localizzazione</h4></label>
-                  <div class="col-6">
-                  <img src="../icone/piu.png" alt="bottone aggiungi foto" onclick="loadMaps();" id="buttonMaps">
-                </div>
-              		<div id="dialog" style="display: none">
-                    <div id="dvMap" style="height: 380px; width: 580px;"></div> 
-                	</div>
-                </div>
-                <!--Invia Segnalazione-->
-                <div class="row">
-                <div class="col">
-                <a href="../pages/segnalazioneSuccess.html" id="bottoneInvia"><button  type="button" class="bottone" onClick="testResults(this.document)"><h5>Invia</h5></button></a>
-                </div>
-                <!--Annulla -->
-                <div class="col">
-                <a href="../index.html"><button type="button" id="bottoneAnnulla" class="bottone"><h5>Annulla</h5></button></a>
-                </div>
-               </div> 
-              </div>               
-              </form>
-          </div>
+        <!--Descrizione-->
+        <div class="col mt-2">
+          <label for="inputDescrizione" id="inputDescrizioneLabel"><h5>Descrizione</h5></label>
+          <textarea class="form-control" placeholder="Aggiungi una descrizione del problema" id="inputDescrizione" ></textarea>
         </div>
 
-       <!--   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.47"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
-        <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
-        rel="stylesheet" type="text/css" />
-    
+        <!--Input Localizzazione-->
+        <div class="row">
+          <label for="inputLocalizzazione" class="col" id="inputLocalizzazione"><h5>Invia la localizzazione</h5></label>
+          <div class="col" style="margin-left: 140px; margin-top: 20px;">
+            <img src="../icone/piu.png" alt="bottone aggiungi localizzazione" id="geoBtn" width="50px">
+          </div>
+          <div id="display-geo" class="col"></div>
+        </div>
+
+        <!--Invia Segnalazione-->
+        <div class="row mt-2 mb-4">
+          <div class="col">
+            <a href="./segnalazioneErrore.html" id="bottoneInvia"><button  type="button" class="bottone" onClick="testResults()"><h5>Invia</h5></button></a>
+          </div>
+          <!--Annulla -->
+          <div class="col">
+            <a href="../index.html"><button type="button" id="bottoneAnnulla" class="bottone"><h5>Annulla</h5></button></a>
+          </div>
+        </div> 
+      </form>
+      </div>
+    </div>
+
     <!--  Script -->
-        <script src="main-invia-segnalazione.js"></script>
-        
-		<script type="text/javascript">
-			function getImage(imagename)
-			{
-				var newimg=imagename.replace(/^.*\\/,"");
-				$('#display-image').html(newimg);
-			}		
-			 
-    	 function testResults (document) 
-    	 {
-              var nameImage = $('#display-image').text();
-              var n = nameImage.length;
-              if(nameImage.length == "0")
-            	  {
-            	  $('#bottoneInvia').attr("href", "../pages/segnalazioneErrore.html");
-            	  }
-    	 }
-    	 
-    	 </script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function getImage(imagename){
+        var newimg=imagename.replace(/^.*\\/,"");
+        $('#display-image').html("<h4>Immagine caricata con successo</h4><h6>" + newimg + "</h6>");
+      }
+
+      $('#geoBtn').on('click', () => {
+        navigator.geolocation.getCurrentPosition(showPos, function(){ alert ("La geolocalizzazione non è supportata."); });
+      });
+
+      function showPos(position){
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        $('#display-geo').html("<h4>Locazione caricata con successo</h4><h6>Latitudine: "+ lat + "<br>Longitudine: " + lon + "</h6>");
+      }
+
+      function testResults(){
+        var nameImage = $('#display-image').text();
+        var geoTxt = $("#display-geo").text();
+        var desc = $("inputDescrizione").val();
+        if ((nameImage.length > 0) && (geoTxt.length > 0) && (desc != "")){
+          $('#bottoneInvia').attr("href", "../pages/segnalazioneSuccess.html");
+        }
+      }
+    </script>
+</body>
 </html>

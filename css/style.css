@@ -65,6 +65,7 @@ h1, h2, h3, h4,h5{
 
 #riquadro-esterno{
     border: 1px solid #ACACAC;
+    margin-bottom: 20px;
 }
 
 #label-esterna{
@@ -77,8 +78,8 @@ h1, h2, h3, h4,h5{
 }
 
 #form-segnalazione{
-    margin-left: 80px;
-    margin-top: 80px;
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
 .inputfile>input {
@@ -87,7 +88,7 @@ h1, h2, h3, h4,h5{
 }
 
 #display-image{
-	margin-bottom: 20px;
+    margin-left: -50px;
 }
 
 #inputDescrizioneLabel{
@@ -102,13 +103,6 @@ h1, h2, h3, h4,h5{
 
 #inputLocalizzazione{
 	margin-top: 40px;
-}
-
-#buttonMaps{
-	margin-top: 40px;
-	cursor: pointer;
-	margin-left: 10px;
-	
 }
 
 /*Visualizza segnalazioni*/
@@ -217,7 +211,7 @@ h1, h2, h3, h4,h5{
     padding-bottom:5%;
 }
 
-	/* Segnalazione success.html */
+/* Segnalazione success.html */
 #Success
 {
 	text-align:center;
@@ -226,7 +220,7 @@ h1, h2, h3, h4,h5{
     font-size: 20px;
 }
 
-	/* Sezione i miei punti */
+/* Sezione i miei punti */
 #MyPoints
 {
 	text-align: left;
