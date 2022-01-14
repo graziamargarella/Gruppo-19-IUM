@@ -264,3 +264,18 @@ h1, h2, h3, h4,h5{
     padding: 0;
     
 }
+
+/* Login */
+#label-esternaLogin{
+     border: 1px solid #ACACAC;
+    position: relative;
+    top: -20px;
+    background-color: white;
+    display: inline-block;
+    padding: 0 15px 0 15px;
+}
+
+#riquadro-esternoLogin{
+    border: 1px solid #ACACAC;
+    margin-bottom: 20px;
+}
