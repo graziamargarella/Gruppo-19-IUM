@@ -181,7 +181,7 @@ h1, h2, h3, h4,h5{
 }
 
 
-/* Pagina Scopri di più */
+/* Pagina Scopri di piÃ¹ */
 
 #TitoloNotiziaSD
 {
@@ -267,7 +267,7 @@ h1, h2, h3, h4,h5{
 
 /* Login */
 #label-esternaLogin{
-     border: 1px solid #ACACAC;
+    border: 1px solid #ACACAC;
     position: relative;
     top: -20px;
     background-color: white;
@@ -278,4 +278,44 @@ h1, h2, h3, h4,h5{
 #riquadro-esternoLogin{
     border: 1px solid #ACACAC;
     margin-bottom: 20px;
+}
+
+ /* Registrazione #0080ff*/
+#riquadro-esternoRegistrazione{
+    border: 3px solid #ACACAC;
+    margin-bottom: 20px;
+}
+
+.textBox{
+	height: 50px;
+    font-size: 22pt;	
+}
+
+#message {
+  display:none;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
 }
