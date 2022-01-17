@@ -7,23 +7,6 @@
         <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
         <title>Una Mano al Mare - HomePage</title>
         <link rel="stylesheet" href="./css/style.css"/>
-        <script type="module">
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
-            import { } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js"
-            import { } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js"
-
-            const firebaseConfig = {
-              apiKey: "AIzaSyCoo5glDwlGXvzOf1IWWO0Xocm-3U0xtFk",
-              authDomain: "una-mano-al-mare.firebaseapp.com",
-              projectId: "una-mano-al-mare",
-              storageBucket: "una-mano-al-mare.appspot.com",
-              messagingSenderId: "102040764052",
-              appId: "1:102040764052:web:2e1da04f2438bc96313e81"
-            };
-          
-            const app = initializeApp(firebaseConfig);
-            console.log(app);
-          </script>
     </head>
     <body>
         <!-- Header -->
@@ -34,7 +17,9 @@
             <div id="loadTippy()" style="display: none;">
                <a href="./pages/Registrazione.html" style="padding: 30px">Registrazione</a>
                <br><br>
-               <a href="./pages/Login.html" style="padding: 30px;">Login</a></div>
+               <a href="./pages/Login.html" style="padding: 30px;" id="login">Login</a>
+               <a href="#" onclick="logout()" style="padding: 30px;" id="logout">Logout</a>
+            </div>
             <nav class="nav">
                 <a class="nav-link" href="">Home</a>
                 <a class="nav-link active" href="./pages/I-Miei-Punti.html">I tuoi punti</a>
@@ -50,7 +35,7 @@
                     <img src="./img/mappa-statica.png" alt="mappa con segnalini che indicano i luoghi in cui sono presenti il maggior numero di segnalazioni" width="90%"/>
                 </div>
                 <div class="col-sm-6">
-                    <h5 class="paragrafoCTA">Benvenuti su Una mano al mare!</h5>
+                    <h5 id="hello" class="paragrafoCTA">Benvenuti su Una mano al mare!</h5>
                     <p class="paragrafoCTA">Questo sito vuole essere un portale utile ai cittadini per salvaguardare l'ambiente marittimo e a coinvolgerli nell'invio di segnalazioni oppure nelle letture presentate nella sezione notizie del sito.</p>
                     <a href="./pages/invia-segnalazione.html"><button class="bottone bottoneCTA"><h5>Invia una segnalazione</h5></button></a>
                     <a href="./pages/visualizza-segnalazioni.html"><button class="bottone bottoneCTA"><h5>Visualizza segnalazioni</h5></button></a>
@@ -112,6 +97,10 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
         <script src="./js/main.js"></script>
+        <script src="./js/login_registrazione.js"></script>
     </body>
 </html>

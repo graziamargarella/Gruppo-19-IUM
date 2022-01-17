@@ -1,36 +1,38 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-
-function signInWithEmailPassword() {
-  var email = "test@example.com";
-  var password = "hunter2";
-  
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-        var user = userCredential.user;
-        // redirect a homepage (invia alert successo)
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // inserire alert login errore
-    });
+function login(){
+  var email = document.getElementById('uname').value;
+  var password = document.getElementById('pass').value;
+  console.log(email);
+  auth.signInWithEmailAndPassword(email, password).catch(function(error){
+    var errorMessage = error.message;
+    console.log('Errore sign in, ', errorMessage);
+    alert(errorMessage);
+  }).then(function(user){
+    if (user){
+      window.location.replace("../index.html");
+    }
+  });
 }
 
-function signUpWithEmailPassword() {
-  var email = "test@example.com";
-  var password = "hunter2";
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in 
-      var user = userCredential.user;
-        // redirect a homepage (invia alert successo)
+function logout(){
+  auth.signOut().then(function(){
+    window.location.replace("./index.html");
+  }).catch(function(error){
+    console.log('Errore logout, ', error.message);
+  });
+}
 
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-    // inserire alert registrazione errore
-    });
+function registrazione(){
+  var email = document.getElementById('formEmail').value;
+  var password = document.getElementById('formPass').value;
+  auth.createUserWithEmailAndPassword(email, password)
+  .then(function(result) {
+  return result.user.updateProfile({
+    displayName: document.getElementById("formUserName").value
+  });
+  }).then(() => {
+    window.location.replace("../index.html");
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
 }

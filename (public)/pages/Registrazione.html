@@ -1,161 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-        <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
-        <title>Una Mano al Mare - Registrazione</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-    </head>
-    <body>
-        <!-- Header -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+		<link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
+		<title>Una Mano al Mare - Registrazione</title>
+		<link rel="stylesheet" href="../css/style.css"/>
+	</head>
+	<body>
+		<!-- Header -->
         <div class="liquid-container">
             <img src="../img/header.png" width="100%"/>
             <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
             <img id="header-icon" src="../icone/user.png" width="60px"/>
             <div id="loadTippy()" style="display: none;">
-               <a href="http://www.google.it" style="padding: 30px">Registrazione</a>
+               <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
                <br><br>
-               <a href="../pages/Login.html" style="padding: 30px;">Login</a></div>
+               <a href="../pages/Login.html" style="padding: 30px;" id="login">Login</a>
+               <a href="#" onclick="logout()" style="padding: 30px;" id="logout">Logout</a>
+            </div>
             <nav class="nav">
-                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link" href="">Home</a>
                 <a class="nav-link active" href="../pages/I-Miei-Punti.html">I tuoi punti</a>
                 <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
             </nav>
         </div>
-        <!--  form  -->
-        <div id="riquadro-esternoRegistrazione" class="container mt-5">
-        	<div id="label-esternaLogin">
-  				<div class="row">
-    				<div class="col">
-      					<h3>Registrazione</h3>
-    				</div>
-        		</div>
-        	</div>
-        	<div id="form-Register">
-        		<form name="formRegister">
-        			<div class="row">
-        				<div class="col">
-        					<div class="row ml-5">
-          						<label for="inputRegisterUserName" class="col-4 ml-5 pl-5 pt-4">
-          							<h4>Username</h4>
-          						</label>
-          						<div class="col pt-4">
-          							<div class="inputRegister" style="margin-left: -100px;">
-            							<label for="inputRegister">
-            								<input type="text" id="formUserName" class="textBox" name="uname" value="" required>    	     
-          								</label>
-         							</div>
-         						</div>
-         					</div>
-         					<div class="row ml-5 pt-4">
-         						<label for="inputRegisterUserEmail" class="col-4 ml-5 pl-5 pt-4">
-         							<h4>Email</h4>
-         						</label>
-          						<div class="col pt-4">
-          							<div class="inputRegister" style="margin-left: -100px;">
-            							<label for="inputRegister">
-            								<input type="email" id="formEmail" class="textBox" name="uname" value="" pattern=".+@globex\.com" required>        
-          								</label>	
-         							</div>
-         						</div>
-         					</div>
-         					<div class="row ml-5 pt-4">
-         						<label for="inputRegisterUserPass" class="col-4 ml-5 pl-5 pt-4">
-         							<h4>Password</h4>
-         						</label>
-          						<div class="col pt-4">
-          							<div class="inputRegister" style="margin-left: -100px;">
-            							<label for="inputRegister">
-            								<input type="password"  id="formPass" class="textBox" name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" required>           
-          								</label>
-         							</div>
-         						</div>
-         					</div>
-         				</div>
-         				<div id="message" class="col-3">
-  							<h4>Controlla che la password:</h4>  
-          						<p id="letter" class="invalid">Che abbia una lettera <b>minuscola</b></p>
-  								<p id="capital" class="invalid">Che abbia una lettera <b>maiuscola</b></p>
-  								<p id="number" class="invalid">Che abbia un <b>numero</b></p>
-  								<p id="length" class="invalid">Che abbia lunghezza minima di <b>8 caratteri</b></p>
-  						</div>
-  					</div>
-         			<!-- Pulsanti -->
-         			<div class="row mt-2 mb-4">
-          				<div class="col">
-          					<a href="../index.html"><button type="button" id="bottoneAnnulla" class="bottone"><h5>Indietro</h5></button></a>
-          				</div>  
-          				<div class="col">
-            				<a href="../index.html" id="bottoneInvia"><button  type="button" class="bottone"><h5>Registrati</h5></button></a>            
-          				</div>
-        			</div>			
-         		</form>
-         	</div>
-  		</div>
-         <!--  Script -->
-        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="../js/main.js"></script>
-        
-        <script>
-        var myInput = document.getElementById("formPass");
-        var letter = document.getElementById("letter");
-        var capital = document.getElementById("capital");
-        var number = document.getElementById("number");
-        var length = document.getElementById("length");
-        
-        myInput.onfocus = function() {
-          document.getElementById("message").style.display = "inline-block";
-        }
-        myInput.onblur = function() {
-          document.getElementById("message").style.display = "none";
-        }
-        
-        myInput.onkeyup = function() {
-        	  // Validazione lettere minuscole
-        	  var lowerCaseLetters = /[a-z]/g;
-        	  if(myInput.value.match(lowerCaseLetters)) {  
-        	    letter.classList.remove("invalid");
-        	    letter.classList.add("valid");
-        	  } else {
-        	    letter.classList.remove("valid");
-        	    letter.classList.add("invalid");
-        	  }
-        	  
-        	  // Validazione lettere maiuscole
-        	  var upperCaseLetters = /[A-Z]/g;
-        	  if(myInput.value.match(upperCaseLetters)) {  
-        	    capital.classList.remove("invalid");
-        	    capital.classList.add("valid");
-        	  } else {
-        	    capital.classList.remove("valid");
-        	    capital.classList.add("invalid");
-        	  }
-
-        	  // Validazione numberi
-        	  var numbers = /[0-9]/g;
-        	  if(myInput.value.match(numbers)) {  
-        	    number.classList.remove("invalid");
-        	    number.classList.add("valid");
-        	  } else {
-        	    number.classList.remove("valid");
-        	    number.classList.add("invalid");
-        	  }
-        	  
-        	  // Validazione lunghezza
-        	  if(myInput.value.length >= 8) {
-        	    length.classList.remove("invalid");
-        	    length.classList.add("valid");
-        	  } else {
-        	    length.classList.remove("valid");
-        	    length.classList.add("invalid");
-        	  }
-        	}
-        </script>
-</body>
+		<!--  form  -->
+		<div id="riquadro-esternoRegistrazione" class="container mt-5">
+			<div id="label-esternaLogin">
+				<div class="row">
+					<div class="col">
+						<h3>Registrazione</h3>
+					</div>
+				</div>
+			</div>
+			<div id="form-Register">
+				<form name="formRegister">
+					<div class="row">
+						<div class="col">
+							<div class="row ml-5">
+								<label for="inputRegisterUserName" class="col-4 ml-5 pl-5 pt-4"><h4>Username</h4></label>
+								<div class="col pt-4">
+									<div class="inputRegister" style="margin-left: -100px;">
+										<label for="inputRegister"><input type="text" id="formUserName" class="textBox" name="uname" value="" required></label>
+									</div>
+								</div>
+							</div>
+							<div class="row ml-5 pt-4">
+							<label for="inputRegisterUserEmail" class="col-4 ml-5 pl-5 pt-4"><h4>Email</h4></label>
+								<div class="col pt-4">
+									<div class="inputRegister" style="margin-left: -100px;">
+										<label for="inputRegister"><input type="email" id="formEmail" class="textBox" name="email" value="" pattern=".+@globex\.com" required></label>	
+									</div>
+								</div>
+							</div>
+							<div class="row ml-5 pt-4">
+								<label for="inputRegisterUserPass" class="col-4 ml-5 pl-5 pt-4"><h4>Password</h4></label>
+								<div class="col pt-4">
+									<div class="inputRegister" style="margin-left: -100px;">
+										<label for="inputRegister"><input type="password"  id="formPass" class="textBox" name="pass" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" required></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="message" class="col-3">
+							<h4>Controlla che la password:</h4>  
+							<p id="letter" class="invalid">Che abbia una lettera <b>minuscola</b></p>
+							<p id="capital" class="invalid">Che abbia una lettera <b>maiuscola</b></p>
+							<p id="number" class="invalid">Che abbia un <b>numero</b></p>
+							<p id="length" class="invalid">Che abbia lunghezza minima di <b>8 caratteri</b></p>
+						</div>
+					</div>
+					<!-- Pulsanti -->
+					<div class="row mt-2 mb-4">
+						<div class="col">
+							<a href="../index.html"><button type="button" id="bottoneAnnulla" class="bottone"><h5>Indietro</h5></button></a>
+						</div>  
+						<div class="col">
+							<button type="button" class="bottone" onclick="registrazione()"><h5>Registrazione</h5></button>            
+						</div>
+					</div>			
+				</form>
+			</div>
+		</div>
+		<!--  Script -->
+		<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+		<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+		<script src="../js/main.js"></script>
+		<script src="../js/registrazione-page.js"></script>
+		<script src="../js/login_registrazione.js"></script>
+	</body>
 </html>

@@ -15,9 +15,11 @@
             <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
             <img id="header-icon" src="../icone/user.png" width="60px"/>
             <div id="loadTippy()" style="display: none;">
-               <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
-               <br><br>
-               <a href="../pages/Login.html" style="padding: 30px;">Login</a></div>
+                <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
+                <br><br>
+                <a href="../pages/Login.html" style="padding: 30px;" id="not-logged">Login</a>
+                <a href="#" onclick="logout()" style="padding: 30px;" id="logged">Logout</a>
+            </div>
             <nav class="nav">
                 <a class="nav-link" href="../index.html">Home</a>
                 <a class="nav-link active" href="../pages/I-Miei-Punti.html">I tuoi punti</a>
@@ -31,7 +33,7 @@
         <h3>Login</h3>
       </div>
       <div id="form-login">
-        <form name="formLogin">
+        <form name="formLogin" method="post">
         <div class="row">
         <div class="col"></div>
           <label for="inputLoginUserName" class="col"><h5>Username</h5></label>
@@ -48,7 +50,7 @@
           <div class="col-10">
           <div class="inputLoginPass" style="margin-left: 170px;">
             <label for="inputLoginPass">
-            <input type="text" id="pass" name="pass" value="">           
+            <input type="password" id="pass" name="pass" value="">           
           </label>
           </div>
         </div>
@@ -60,7 +62,7 @@
           </div>
           
           <div class="col">
-            <a href="" id="bottoneInvia"><button  type="button" class="bottone"><h5>Login</h5></button></a>            
+            <button type="button" class="bottone" onclick="login()"><h5>Login</h5></button>            
           </div>
         </div> 
         
@@ -73,7 +75,10 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
         <script src="../js/main.js"></script>
+        <script src="../js/login_registrazione.js"></script>
 </body>
 </html>
