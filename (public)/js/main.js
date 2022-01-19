@@ -26,5 +26,9 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebaseApp.auth();
 
 firebase.auth().onAuthStateChanged((user) => {
-	document.getElementById("hello").innerHTML = "Ciao " + user.displayName + ", bentornato su Una Mano al Mare";
+	try{
+		document.getElementById("hello").innerHTML = "Ciao " + user.displayName + ", bentornato su Una Mano al Mare";
+	} catch (error){
+		console.log('no hello');
+	}
 });

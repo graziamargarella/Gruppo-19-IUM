@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
         <title>Una Mano al Mare - I Miei Punti</title>
         <link rel="stylesheet" href="../css/style.css"/>
         
@@ -20,36 +21,63 @@ li  {
         <!-- Header -->
         <div class="liquid-container">
             <img src="../img/header.png" width="100%"/>
-            <a href="../index.html"><h1 id="header-text">Una Mano al Mare</h1></a>
-            <a href="#"><img id="header-icon" src="../icone/user.png" width="60px"/></a>
+            <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
+            <img id="header-icon" src="../icone/user.png" width="60px"/>
+            <div id="loadTippy()" style="display: none;">
+                <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
+                <br><br>
+                <a href="../pages/Login.html" style="padding: 30px;" id="not-logged">Login</a>
+                <a href="#" onclick="logout()" style="padding: 30px;" id="logged">Logout</a>
+            </div>
             <nav class="nav">
-              <a class="nav-link" href="../index.html">Home</a>
-              <a class="nav-link active" href="./I-Miei-Punti.html">I tuoi punti</a>
-                <a class="nav-link active" href="./chi-siamo.html">Chi siamo</a>
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link active" href="../pages/I-Miei-Punti.html">I tuoi punti</a>
+                <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
             </nav>
-        </div> 
-      
-<div class="row">
-	<div class="col">
-		<h3 id="MyPoints">I miei punti: <br></h3> <h1 id="numberPoints">700</h1>
-	</div>
-		<div class="col -3">
-			<h3 id="Risolte">Numero di segnalazioni risolte: <br></h3> <h1 id="numberRisolte">20</h1>
-		</div>
-</div>
+        </div>
 
-<h3 style="margin-left: 115px; margin-top: 30px;">le ultime 5 segnalazioni:</h3>
-<div id="riquadro-esternoMyPoints" class="container-xxl">
-	<div class="row">
-		<ul id="listaSegnalazioni">
-			<li> &#x26AB; 20/04/2021 Hai raccolto 1kg di spazzatura!Hai guadagnato 20 punti</li>
-			<li> &#x26AB; 12/03/2021 Grazie del tuo prezioso aiuto!Hai guadagnato 50 punti</li>
-			<li> &#x26AB; 06/02/2021 Anche oggi hai dato una mano al mare!Guadagni 50 punti</li>
-			<li> &#x26AB; 01/01/2021 Hai aiutato a recuperare una rete da pesca!Hai guadagnato 100 punti!</li>
-			<li> &#x26AB; 25/10/2020 Segnalazione avvenuta!Hai guadagnato 50 punti!</li>
-		</ul>
-	</div>		
-</div>
+        <div id="all" class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 id="MyPoints">I miei punti: <br></h3> <h1 id="numberPoints">700</h1>
+                </div>
+                    <div class="col -3">
+                        <h3 id="Risolte">Numero di segnalazioni risolte: <br></h3> <h1 id="numberRisolte">20</h1>
+                    </div>
+            </div>
+        
+            <h3 style="margin-left: 115px; margin-top: 30px;">le ultime 5 segnalazioni:</h3>
+            <div id="riquadro-esternoMyPoints" class="container-xxl">
+                <div class="row">
+                    <ul id="listaSegnalazioni">
+                        <li> &#x26AB; 20/04/2021 Hai raccolto 1kg di spazzatura! Hai guadagnato 20 punti</li>
+                        <li> &#x26AB; 12/03/2021 Grazie del tuo prezioso aiuto! Hai guadagnato 50 punti</li>
+                        <li> &#x26AB; 06/02/2021 Anche oggi hai dato una mano al mare! Guadagni 50 punti</li>
+                        <li> &#x26AB; 01/01/2021 Hai aiutato a recuperare una rete da pesca! Hai guadagnato 100 punti!</li>
+                        <li> &#x26AB; 25/10/2020 Segnalazione avvenuta! Hai guadagnato 50 punti!</li>
+                    </ul>
+                </div>		
+            </div>
+        </div>
+  
 
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/login_registrazione.js"></script>
+        <script>
+            try{
+                utente = auth.currentUser;
+            } catch{
+                $("#all").css('display', 'none');
+                alert("Devi effettuare il login per accedere a questa pagina.")
+            }
+        </script>
 </body>
 </html>

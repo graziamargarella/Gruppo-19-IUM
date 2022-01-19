@@ -98,13 +98,17 @@ function dettagli(x){
 }
 
 function risolvi(x){
-    risoltoDa = "Marco"; //inserire nome da login
-    segnalazioni[x].risolviSegnalazione(risoltoDa);
-    L.marker(segnalazioni[x].coordinate, {icon:greenIcon}).addTo(greenLayerGroup);
-    var detailsString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1 mb-3"><div class="col"><img src="../img/foto_segnalazioni/'+segnalazioni[x].image[1]+'" style="padding: 1.5em"></div><div class="col" style="padding-top: 1.5em; padding-right: 2em;"><h5>'+segnalazioni[x].titolo+'</h5><p style="font-size:12px">'+ segnalazioni[x].descrizione +'</p><p style="font-size:13px"><b>Tipologia:  </b>'+ segnalazioni[x].tipologia +'</p><p style="font-size:13px"><b>Inviato da: </b>'+ segnalazioni[x].inviatoDa +'</p><div class="row"><p class="card-text col-6"><img id="icona-map" src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[x].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[x].luogo +'</small></p></div><p style="font-size:13px"><b>Risolto da:  </b>'+ segnalazioni[x].risoltoDa +'</p><p style="font-size:13px"><b>Risolto il:  </b>'+ segnalazioni[x].risoltoData +'</p></div></div></div><button class="bottone btnAnnullaRisolvi"  onclick="annullaRisolvi('+ segnalazioni[x].numero+')"><h5>Annulla Risolvi</h5></button><a href="./visualizza-segnalazioni.html"><button class="bottone btnDettagli"><h5>Indietro</h5></button></a>';
-    $('#card-container').empty()
-    $('#card-container').append(detailsString);
-    alert("Grazie per aver risolto questa segnalazione, dopo una veloce verifica ti accrediteremo 50 punti!")
+    try {
+        risoltoDa = auth.currentUser.displayName;
+        segnalazioni[x].risolviSegnalazione(risoltoDa);
+        L.marker(segnalazioni[x].coordinate, {icon:greenIcon}).addTo(greenLayerGroup);
+        var detailsString = '<div class="card mb-3"><div class="row mt-2 ml-1 mr-1 mb-3"><div class="col"><img src="../img/foto_segnalazioni/'+segnalazioni[x].image[1]+'" style="padding: 1.5em"></div><div class="col" style="padding-top: 1.5em; padding-right: 2em;"><h5>'+segnalazioni[x].titolo+'</h5><p style="font-size:12px">'+ segnalazioni[x].descrizione +'</p><p style="font-size:13px"><b>Tipologia:  </b>'+ segnalazioni[x].tipologia +'</p><p style="font-size:13px"><b>Inviato da: </b>'+ segnalazioni[x].inviatoDa +'</p><div class="row"><p class="card-text col-6"><img id="icona-map" src="../icone/clock.png" alt="icona per indicare quando è stata inviata la segnalazione"><small class="text-muted">'+ segnalazioni[x].invio+'</small></p><p class="card-text col-6"><img id="icona-map" src="../icone/map.png" alt="icona per indicare il luogo"><small class="text-muted">'+ segnalazioni[x].luogo +'</small></p></div><p style="font-size:13px"><b>Risolto da:  </b>'+ segnalazioni[x].risoltoDa +'</p><p style="font-size:13px"><b>Risolto il:  </b>'+ segnalazioni[x].risoltoData +'</p></div></div></div><button class="bottone btnAnnullaRisolvi"  onclick="annullaRisolvi('+ segnalazioni[x].numero+')"><h5>Annulla Risolvi</h5></button><a href="./visualizza-segnalazioni.html"><button class="bottone btnDettagli"><h5>Indietro</h5></button></a>';
+        $('#card-container').empty()
+        $('#card-container').append(detailsString);
+        alert("Grazie per aver risolto questa segnalazione, dopo una veloce verifica ti accrediteremo 50 punti!");
+    } catch (error) {
+        alert("Devi effettuare prima il login.");
+    }
 }
 
 function annullaRisolvi(x){

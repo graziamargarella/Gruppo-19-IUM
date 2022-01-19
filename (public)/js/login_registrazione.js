@@ -1,14 +1,15 @@
 function login(){
   var email = document.getElementById('uname').value;
   var password = document.getElementById('pass').value;
-  console.log(email);
   auth.signInWithEmailAndPassword(email, password).catch(function(error){
     var errorMessage = error.message;
     console.log('Errore sign in, ', errorMessage);
     alert(errorMessage);
-  }).then(function(user){
-    if (user){
+  }).then(function(){
+    if (auth.currentUser.displayName){
       window.location.replace("../index.html");
+    } else {
+      window.location.replace("../pages/HomePageAmministratore.html");
     }
   });
 }

@@ -13,10 +13,15 @@
             <img src="../img/header.png" width="100%"/>
             <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
             <img id="header-icon" src="../icone/user.png" width="60px"/>
+            <div id="loadTippy()" style="display: none;">
+                <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
+                <br><br>
+                <a href="../pages/Login.html" style="padding: 30px;" id="not-logged">Login</a>
+                <a href="#" onclick="logout()" style="padding: 30px;" id="logged">Logout</a>
+            </div>
             <nav class="nav">
                 <a class="nav-link" href="../index.html">Home</a>
-                <a class="nav-link active" href="./I-Miei-Punti.html">I tuoi punti</a>
-                <a class="nav-link active" href="./chi-siamo.html">Chi siamo</a>
+                <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
             </nav>
         </div>
         
@@ -92,9 +97,15 @@
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/login_registrazione.js"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet"  href="https://unpkg.com/tippy.js@6/themes/light.css"/>
     <title>Una Mano al Mare - Invia una segnalazione</title>
     <link rel="stylesheet" href="../css/style.css"/>
   </head>
@@ -12,19 +13,20 @@
     <!-- Header -->
     <div class="liquid-container">
       <img src="../img/header.png" width="100%"/>
-      <a href="../index.html"><h1 id="header-text">Una Mano al Mare</h1></a>
+      <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
       <img id="header-icon" src="../icone/user.png" width="60px"/>
       <div id="loadTippy()" style="display: none;">
-               <a href="http://www.google.it" style="padding: 30px">Registrazione</a>
-               <br><br>
-               <a href="../pages/Login.html" style="padding: 30px;">Login</a></div>
+          <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
+          <br><br>
+          <a href="../pages/Login.html" style="padding: 30px;" id="not-logged">Login</a>
+          <a href="#" onclick="logout()" style="padding: 30px;" id="logged">Logout</a>
+      </div>
       <nav class="nav">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link active" href="./I-Miei-Punti.html">I tuoi punti</a>
-        <a class="nav-link active" href="./chi-siamo.html">Chi siamo</a>
+          <a class="nav-link" href="../index.html">Home</a>
+          <a class="nav-link active" href="../pages/I-Miei-Punti.html">I tuoi punti</a>
+          <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
       </nav>
     </div>
-
     <h3 id="titolo" class="mt-5">Invia una segnalazione</h2>
     <!--Form-->
     <div id="riquadro-esterno" class="container">
@@ -79,13 +81,16 @@
     </div>
 
     <!--  Script -->
-  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        
-  <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/login_registrazione.js"></script>
     <script type="text/javascript">
       function getImage(imagename){
         var newimg=imagename.replace(/^.*\\/,"");
