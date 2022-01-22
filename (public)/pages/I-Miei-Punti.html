@@ -39,7 +39,7 @@ li  {
         <div id="all" class="container">
             <div class="row">
                 <div class="col">
-                    <h3 id="MyPoints">I miei punti: <br></h3> <h1 id="numberPoints">700</h1>
+                    <h3 id="MyPoints">I miei punti: <br></h3> <h1 id="numberPoints">270</h1>
                 </div>
                     <div class="col -3">
                         <h3 id="Risolte">Numero di segnalazioni risolte: <br></h3> <h1 id="numberRisolte">20</h1>
@@ -75,8 +75,8 @@ li  {
             try{
                 utente = auth.currentUser;
             } catch{
-                $("#all").css('display', 'none');
                 alert("Devi effettuare il login per accedere a questa pagina.")
+                $("#all").css('display', 'none');
             }
         </script>
 </body>
