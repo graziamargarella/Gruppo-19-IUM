@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+        <title>Una Mano al Mare - Crea Notizia</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="liquid-container">
+            <img src="../img/header.png" width="100%"/>
+            <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
+            <img id="header-icon" src="../icone/user.png" width="60px"/>
+            <div id="loadTippy()" style="display: none;">
+                <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
+                <br><br>
+                <a href="../pages/Login.html" style="padding: 30px;" id="not-logged">Login</a>
+                <a href="#" onclick="logout()" style="padding: 30px;" id="logged">Logout</a>
+            </div>
+            <nav class="nav">
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link active" href="../pages/I-Miei-Punti.html">I tuoi punti</a>
+                <a class="nav-link active" href="../pages/chi-siamo.html">Chi siamo</a>
+            </nav>
+        </div>
+
+        <!-- Notizia  -->
+       
+
+        <div class="container">
+            <!-- Titolo Modifica Notizia -->
+            <div class="BoxNotizia">
+                <h1 class=ModificaNotiziaTitolo>Modifica Notizia</h1>
+
+          <!-- Box Modifica notizia -->
+            <div class="row">
+                <div>
+                    <label class="AggiungiTitoloNotizia"><h4>Modifica Titolo Notizia</h4></label><input value="Hanno raggiunto il mare le tartarughe salvate un mese fa" type="text" class="InputTitNot">
+                </div>
+                <div>   
+                    <label class="AggiungiTitoloNotizia"><h4>Modifica Immagine Notizia</h4></label><button type="file" class="bottone" id="bottonepiù"><h4>+</h4> </botton>
+                </div>    
+                <div>
+                    <label class="AggiungiTitoloNotizia"><h4>Modifica Testo Notizia</h4></label>
+               </div>
+               <textarea class="TextArea" value="Un grande momento di gioia per l'associazione Una Mano al Mare e i suoi volontari. Dopo aver salvato la tartaruga Dolly, che con il tempo è diventata la mascotte della comunità, siamo riusciti a farla tornare in libertà. E con lei anche la sua famiglia!" ></textarea>
+            </div>    
+            
+            
+        
+
+            <!-- Bottone Aggiungi Notizia -->
+            <a id="TornaAllaHomeSD" href="../pages/Notizia1.html"><button type="button" class="bottone"><h5>ModificaNotizia</h5></button></a>
+        
+            </div>
+
+ <!-- Bottone Torna alla Home -->
+ <a id="TornaAllaHomeSD" href="../index.html"><button type="button" class="bottone"><h5>Torna alla Home</h5></button></a>
+
+        </div>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/login_registrazione.js"></script>
+    </body>
+</html>
