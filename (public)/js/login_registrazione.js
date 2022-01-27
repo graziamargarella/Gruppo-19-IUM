@@ -15,11 +15,19 @@ function login(){
 }
 
 function logout(){
-  auth.signOut().then(function(){
-    window.location.replace("./index.html");
-  }).catch(function(error){
-    console.log('Errore logout, ', error.message);
-  });
+  if (auth.currentUser.displayName){
+    auth.signOut().then(function(){
+      window.location.replace("./index.html");
+    }).catch(function(error){
+      console.log('Errore logout, ', error.message);
+    });
+  } else {
+    auth.signOut().then(function(){
+      window.location.replace("../index.html");
+    }).catch(function(error){
+      console.log('Errore logout, ', error.message);
+    });
+  }
 }
 
 function registrazione(){

@@ -13,7 +13,7 @@
     <!-- Header -->
     <div class="liquid-container">
       <img src="../img/header.png" width="100%"/>
-      <a href=""><h1 id="header-text">Una Mano al Mare</h1></a>
+      <h1 id="header-text">Una Mano al Mare</h1>
       <img id="header-icon" src="../icone/user.png" width="60px"/>
       <div id="loadTippy()" style="display: none;">
           <a href="../pages/Registrazione.html" style="padding: 30px">Registrazione</a>
@@ -41,7 +41,7 @@
           <div class="col-6">
             <div class="inputfile" style="margin-left: 200px;">
               <label for="inputfile">
-              <img src="../icone/piu.png" alt="bottone aggiungi foto" width="50px">             
+              <img src="../icone/piu.png" alt="bottone aggiungi foto" width="50px" style="cursor: pointer;">             
               </label>
               <input type="file" id="inputfile" class="form-control" accept="image/png, image/jpg" onchange="getImage(this.value);">
             </div>
@@ -61,7 +61,7 @@
         <div class="row">
           <label for="inputLocalizzazione" class="col" id="inputLocalizzazione"><h5>Invia la localizzazione</h5></label>
           <div class="col" style="margin-left: 140px; margin-top: 20px;">
-            <img src="../icone/piu.png" alt="bottone aggiungi localizzazione" id="geoBtn" width="50px">
+            <img src="../icone/piu.png" alt="bottone aggiungi localizzazione" id="geoBtn" width="50px" style="cursor: pointer;">
           </div>
           <div id="display-geo" class="col"></div>
         </div>
@@ -89,8 +89,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/login_registrazione.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/login_registrazione.js"></script>
     <script type="text/javascript">
       function getImage(imagename){
         var newimg=imagename.replace(/^.*\\/,"");
